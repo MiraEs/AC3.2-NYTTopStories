@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class Article {
+class Article: NSObject {
     let section: String
     let subsection: String
     let title: String
