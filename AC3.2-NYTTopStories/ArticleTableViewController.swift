@@ -91,7 +91,7 @@ class ArticleTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func applyPredicate(search: String) {
-        let predicate = NSPredicate(format:"ANY per_facet contains[c] %@", search, search, search)
+        let predicate = NSPredicate(format:"ANY per_facet contains[c] %@ OR ANY des_facet contains[c] %@ OR ANY geo_facet contains[c] %@", search, search, search)
         
         self.articles = self.allArticles.filter { predicate.evaluate(with: $0) }
         self.tableView.reloadData()
