@@ -90,6 +90,8 @@ class ArticleTableViewController: UITableViewController, UISearchBarDelegate {
         return self.sectionTitles[section]
     }
     
+    //MARK: - Search text, filtered using Predicate
+    
     func applyPredicate(search: String) {
         let predicate = NSPredicate(format:"ANY per_facet contains[c] %@ OR ANY des_facet contains[c] %@ OR ANY geo_facet contains[c] %@", search, search, search)
         
